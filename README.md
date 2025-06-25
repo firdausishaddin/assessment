@@ -37,34 +37,56 @@ dotnet ef database update
 ```
 
 ### 5. Running & Testing
-(Optional) By default, the system will automatically pull the data from http://test-demo.aemenersol.com/api/PlatformWell/GetPlatformWellActual API and insert/update the platforms and wells table
-```
-- Open the project solution in Visual Studio (I'm using 2022)
-- Press F5 to start
-- Login user via swagger API
-	- username: admin
-	- password: Test@123
-- Get & copy the bearer token returned
-- Put the bearer token in the authentication field on top right of the Web API. E.g. Bearer <token>
-- Use the /api/platforms/actual to insert/update the table for actual data
-- Use the /api/platforms/dummy to insert/update the table for dummy data
-- Use the /api/platforms to test the data accordingly
+By default, the system will automatically pull data from http://test-demo.aemenersol.com/api/PlatformWell/GetPlatformWellActual and insert/update the Platforms and Wells tables.
+
+🧪 Steps to Test
+Open the project solution in Visual Studio 2022 (or your preferred IDE).
+
+## 🧪 Sample `appsettings.json` Connection String
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost,1433;Database=AssessmentDb;User Id=sa;Password=yourStrong(!)Password;"
+  }
+}
 ```
 
-### 5. Part 1: Assessment
-- Project Setup (.Net Core API + EF Core, SQL, etc.) 0.5 hr
-- Create Models and configure EF Code First 0.5 hr
-- Configure login to  0.5 hr
-- Implement API call and deserialize into DTOs 0.5 hr
-- Insert/update into DB 1 hr
-- Test for both actual & dummy data 0.5 hr
-- Optimization 0.5 hr
-- Git setup, updated readme, push 0.5 hr
-- SQL Query optimization 1 hr
+Press F5 to start debugging.
+Navigate to the Swagger UI in your browser.
+Authenticate using the following credentials:
+Username: admin
+Password: Test@123
 
-### 6. Part 2: Assessment
+After logging in:
+Copy the returned Bearer token.
+Click the Authorize button in Swagger (top-right).
+Paste the token like this: Bearer <your_token_here>.
+
+Test the endpoints:
+🔄 GET /api/platforms/actual — Sync actual API data into DB.
+🧪 GET /api/platforms/dummy — Sync dummy API data into DB.
+📦 GET /api/platforms — Retrieve and verify stored data.
+
+### 6. Part 1: Assessment
+| Task                                      | Est. Time |
+|-------------------------------------------|-----------|
+| Project setup (.NET Core API + EF + SQL)  | 0.5 hr    |
+| Models and EF Code-First setup            | 0.5 hr    |
+| Login authentication                      | 0.5 hr    |
+| API call & DTO deserialization            | 0.5 hr    |
+| Insert/update database logic              | 1.0 hr    |
+| Test both actual & dummy data             | 0.5 hr    |
+| Optimization and refinements              | 0.5 hr    |
+| Git setup, push to GitHub                 | 0.5 hr    |
+| Beautiful README.md                       | 0.5 hr    |
+| SQL query and optimization                | 1.0 hr    |
+| **Total**                                 | **5.5 hr**|
+💡 _Shoutout to beautiful README.md — deserves a 💕_
+
+### 7. Part 2: Assessment
 ```
-SELECT 
+SELECT
 	p.UniqueName as PlatformName,
 	w.WellId as Id,
 	p.PlatformId as PlatformId,   
