@@ -42,8 +42,7 @@ By default, the system will automatically pull data from http://test-demo.aemene
 🧪 Steps to Test
 Open the project solution in Visual Studio 2022 (or your preferred IDE).
 
-## 🧪 Sample `appsettings.json` Connection String
-
+Sample `appsettings.json` Connection String
 ```json
 {
   "ConnectionStrings": {
