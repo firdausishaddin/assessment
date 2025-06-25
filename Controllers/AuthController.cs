@@ -11,7 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 namespace assessment.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/auth")]
     public class AuthController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
