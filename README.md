@@ -54,8 +54,8 @@ Sample `appsettings.json` Connection String
 Press F5 to start debugging.
 - Navigate to the Swagger UI in your browser.
 - Authenticate using the following credentials:
-- Username: admin
-- Password: Test@123
+```Username: admin```
+```Password: Test@123```
 
 After logging in:
 - Copy the returned Bearer token.
