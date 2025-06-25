@@ -61,7 +61,7 @@ Password: Test@123
 
 After logging in:
 - Copy the returned Bearer token.
-- Click the Authorize button in Swagger (top-right).
+- Click the `Authorize` button in Swagger (top-right).
 - Paste the token like this: Bearer <your_token_here>.
 
 Test the endpoints:
