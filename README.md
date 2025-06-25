@@ -37,7 +37,7 @@ dotnet ef database update
 ```
 
 ### 5. Running & Testing
-By default, the system will automatically pull data from http://test-demo.aemenersol.com/api/PlatformWell/GetPlatformWellActual and insert/update the Platforms and Wells tables.
+By default, the system will automatically pull data from API and insert/update the Platforms and Wells tables.
 
 🧪 Steps to Test
 Open the project solution in Visual Studio 2022 (or your preferred IDE).
@@ -52,20 +52,20 @@ Sample `appsettings.json` Connection String
 ```
 
 Press F5 to start debugging.
-Navigate to the Swagger UI in your browser.
-Authenticate using the following credentials:
+- Navigate to the Swagger UI in your browser.
+- Authenticate using the following credentials:
 Username: admin
 Password: Test@123
 
 After logging in:
-Copy the returned Bearer token.
-Click the Authorize button in Swagger (top-right).
-Paste the token like this: Bearer <your_token_here>.
+- Copy the returned Bearer token.
+- Click the Authorize button in Swagger (top-right).
+- Paste the token like this: Bearer <your_token_here>.
 
 Test the endpoints:
-🔄 GET /api/platforms/actual — Sync actual API data into DB.
-🧪 GET /api/platforms/dummy — Sync dummy API data into DB.
-📦 GET /api/platforms — Retrieve and verify stored data.
+- 🔄 GET /api/platforms/actual — Sync actual API data into DB.
+- 🧪 GET /api/platforms/dummy — Sync dummy API data into DB.
+- 📦 GET /api/platforms — Retrieve and verify stored data.
 
 ### 6. Part 1: Assessment
 | Task                                      | Est. Time |
